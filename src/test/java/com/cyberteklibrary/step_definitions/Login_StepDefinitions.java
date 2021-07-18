@@ -80,19 +80,25 @@ public class Login_StepDefinitions {
     public void iLoginUsingAnd(String arg0, String arg1) {
         loginPage.userName.sendKeys(arg0);
         loginPage.password.sendKeys(arg1);
+    }
+    @And("I click the sign in button")
+    public void iClickTheSignInButton() {
         loginPage.SignInBtn.click();
     }
 
-    @And("there should be {int} users")
+    @Then("there should be {int} users")
     public void thereShouldBeUsers(int arg0) {
+
        int expectedUserNumber = arg0;
        wait.until(ExpectedConditions.visibilityOf(loginPage.users));
 
        String expected = String.valueOf(expectedUserNumber);
-       String actual = loginPage.userName.getText();
+       String actual = loginPage.users.getText();
 
        Assert.assertEquals("Actual user number is not as expected!", actual, expected);
     }
+
+
 }
 
 

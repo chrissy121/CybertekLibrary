@@ -19,9 +19,6 @@ public class LoginPage {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement SignInBtn;
 
-    @FindBy(xpath = "(//h2)[1]")
-    public WebElement number;
-
     @FindBy(id = "user_count")
     public WebElement users;
 
