@@ -6,9 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = "html:target/reports/cucumber-report.html",
         features = "src/test/resources/features",
         glue = "com/cyberteklibrary/step_definitions",
-        dryRun = false
+        dryRun = false,
+        tags = "@wip"
 )
 public class CukesRunner {
 }
